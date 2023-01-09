@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: homework-service
+
+spec:
+  type: LoadBalancer
+  selector:
+    app: homework
+  ports:
+    - name: http
+      protocol: TCP
+      port: 8001
+      targetPort: 8000
